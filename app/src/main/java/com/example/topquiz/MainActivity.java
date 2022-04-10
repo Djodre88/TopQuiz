@@ -2,6 +2,7 @@ package com.example.topquiz;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -53,7 +54,11 @@ public class MainActivity extends AppCompatActivity {
         mPlayButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // L'intent est un objet qui sert à préciser quelle activité lancer
+                Intent gameActivityIntent = new Intent(MainActivity.this, GameActivity.class);
 
+                // La méthode startActivity sert à démarrer une activité
+                startActivity(gameActivityIntent);
             }
         });
     }
